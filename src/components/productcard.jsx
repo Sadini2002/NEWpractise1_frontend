@@ -17,7 +17,7 @@ export default function ProductCard() {
           </a>
           <button className="card-btn cart">Add to Cart</button>
         </div>
-        
+
       </div>
     </div>
   );
