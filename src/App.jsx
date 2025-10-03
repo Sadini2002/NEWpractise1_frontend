@@ -1,6 +1,6 @@
 import { useState } from 'react' 
 import Login from './pages/login'
-import SignUpPage from './pages/signup'
+
 import HomePage from './pages/homePage'
 import './App.css'
 //import Productcard from './components/productcard'
@@ -10,6 +10,7 @@ import { Routes } from 'react-router-dom'
 import AdminPage from './pages/adminPage'
 import TestPage from './pages/testPage'
 import { Toaster } from 'react-hot-toast'
+import Register from './pages/register'
 
 function App() {
  
@@ -22,9 +23,9 @@ function App() {
     
   
    <Routes path="/">
-    <Route path='/' element={<HomePage/>}/>
+    <Route path='/home' element={<HomePage/>}/>
     <Route path='/login' element={<Login/>}/>
-    <Route path='/signup' element={<SignUpPage/>}/>
+    <Route path='/register' element={<Register/>}/>
     <Route path='/test' element={<TestPage/>}/>
     <Route path='/admin' element={<AdminPage/>}/>
     <Route path='/*' element={<h1>404 not found</h1>}/>
