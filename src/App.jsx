@@ -9,6 +9,7 @@ import Header from './components/header'
 import { Routes } from 'react-router-dom'
 import AdminPage from './pages/adminPage'
 import TestPage from './pages/testPage'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
  
@@ -16,6 +17,7 @@ function App() {
     <BrowserRouter>
     <div>
     <Header/>
+    <Toaster position='top-right'/>
     
     
   

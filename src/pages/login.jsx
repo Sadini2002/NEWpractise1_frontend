@@ -1,23 +1,29 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
+import React from "react";
 
 
 export default function Login() {
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
+const [loading, setLoading] = useState(false);
+const router = useRouter();
 
   async function handleLogin(){
     console.log("Email:", email);
     console.log("Password:", password);
     try{
-    const response = axios.post("http://localhost:5000/api/user/login",{
+    const response = await axios.post(import.meta.env.VITE_BACKEND_URL+ "/api/user/login",{
       email:email,
       password:password 
     }
   )
+  toast.success("Login successful")
+  console.log(response.data);
 }catch(err){
-  console.log(err);
+  toast.error("Login failed"  )
 }
   }
 
@@ -25,7 +31,7 @@ const [password, setPassword] = useState("");
 
   return (
     <div className="flex items-center bg-[url('/login.jpg')] justify-center min-h-screen bg-gray-100 ">
-      <div className="w-[50%] max-w-md bg-white rounded-lg shadow-lg p-8 rounded-[20px] shadow-x"> 
+      <div className="w-[50%] max-w-md bg-white rounded-lg shadow-lg p-8 rounded-[20px] shadow-x   blur-50">   
         
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-6 ">
           Login
